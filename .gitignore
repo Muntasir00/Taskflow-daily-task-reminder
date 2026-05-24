@@ -1,0 +1,11 @@
+db.sqlite3
+.vs_code/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.pot
+.ds_store 
