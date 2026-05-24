@@ -4,3 +4,4 @@ celery
 redis
 python-dotenv
 flower
+django_celery_beat
