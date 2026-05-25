@@ -126,3 +126,15 @@ CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "Asia/Dhaka"
+
+CELERY_TASK_ROUTES = {
+    "reminders.tasks.send_reminder_task":{
+        "queue": "notification",
+    },
+    "reports.generate_daily_report":{
+        "queue":"reports",
+    },
+    "reports.cleanup_old_sent_reminders":{
+        "queue":"maintainance",
+    },
+}

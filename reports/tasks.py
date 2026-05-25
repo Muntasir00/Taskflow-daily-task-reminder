@@ -4,7 +4,8 @@ from reminders.models import Reminder
 from .models import DailyReport
 from datetime import timedelta
 
-@shared_task
+
+@shared_task(name="reports.generate_daily_report")
 def generate_daily_report():
     today = timezone.localdate()
 
@@ -29,7 +30,7 @@ def generate_daily_report():
     }
 
 
-@shared_task
+@shared_task(name="reports.cleanup_old_sent_reminders")
 def cleanup_old_sent_reminders():
     cutoff = timezone.now() - timedelta(days=30)
 
